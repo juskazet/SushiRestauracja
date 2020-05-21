@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sushi Restauracja - Galeria</title>
+		<link rel="stylesheet" type= "text/css" href="style.css">
+	</head>
+	<body>
+		<center>
+			<h1>Moja restuaracja sushi</h1>
+			
+			<ul>
+				<li>
+					<a href = "/">Strona domowa</a>
+				</li>
+				<li> 
+					<a class = "active" href = "galeria"> Galeria</a>
+				</li>
+				<li>
+					<a href = "menu">Menu</a>
+				</li>
+				<li>
+					<a href = "zamow">Zamów</a>
+				</li>
+				<li>
+					<a href = "kontakt">Kontakt</a>
+				</li>
+			</ul>
+			
+		</center>
+
+	<div class="gallery" th:each="futomak : ${listaFutomakow}">
+		<img th:src=" @{'/futomaki/'} + ${futomak.getLink()}" alt="brak zdjecia" width="600" height="400">
+		
+		<div class="desc" th:text="${futomak.getInfo()}"></div>
+	</div>
+
+</body>
+</html>

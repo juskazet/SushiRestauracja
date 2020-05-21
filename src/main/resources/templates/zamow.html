@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sushi restauracja - Zamówienie</title>
+		<link rel="stylesheet" type= "text/css" href="style.css">
+	</head>
+	<body>
+		<center>
+			<h1>Moja restuaracja sushi</h1>
+			
+			<ul>
+				<li>
+					<a href = "/">Strona domowa</a>
+				</li>
+				<li> 
+					<a href = "galeria"> Galeria</a>
+				</li>
+				<li>
+					<a href = "menu">Menu</a>
+				</li>
+				<li>
+					<a class = "active" href = "zamow">Zamów</a>
+				</li>
+				<li>
+					<a href = "kontakt">Kontakt</a>
+				</li>
+			</ul>
+			
+		</center>
+		
+		
+		<table>
+		<thead>
+			<tr>
+				<th>Imie</th>
+				<th>Nazwisko</th>
+			</tr>
+		</thead>
+			<tbody>
+				<tr th:each="osoba : ${listaOsob}">
+					<td th:text=${osoba.imie}></td>
+					<td th:text=${osoba.nazwisko}></td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</body>
+</html>
